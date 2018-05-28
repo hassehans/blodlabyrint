@@ -141,7 +141,7 @@ public class GameManager : MonoBehaviour {
 
         pauseMenu.retryButton.SetActive(true);
         pauseMenu.resumeButton.SetActive(false);
-        PlayerPrefs.SetFloat("DeathCount", PlayerPrefs.GetFloat("DeathCount") + bloodManager.deathCounter);
+        PlayerPrefs.SetFloat("DeathCount", (PlayerPrefs.GetFloat("DeathCount") + bloodManager.deathCounter));
         deathsText.text = PlayerPrefs.GetFloat("DeathCount").ToString();
         StartCoroutine(UIDelay());
     }

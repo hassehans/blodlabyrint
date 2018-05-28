@@ -42,17 +42,17 @@ public class ScoreManager : MonoBehaviour {
         Debug.Log("DeathCount: " + deathCount);
         Debug.Log("LevelBloodLoss: " + levelBloodLoss);
 
-        deathCount = PlayerPrefs.GetFloat("DeathCount", deathCount);
+        deathCount = PlayerPrefs.GetFloat("DeathCount");
         totalScore += levelScore;
         totalDeathCount += deathCount;
         totalBloodLoss += levelBloodLoss;
 
-        PlayerPrefs.SetFloat("TotalScore", totalScore += PlayerPrefs.GetFloat("LevelScore"));
         PlayerPrefs.SetFloat("TotalDeathCount", totalDeathCount += PlayerPrefs.GetFloat("DeathCount"));
         PlayerPrefs.SetFloat("TotalBloodLoss", totalBloodLoss += PlayerPrefs.GetFloat("LevelBloodLoss"));
-        Debug.Log("TotalScore: " + totalScore);
+        PlayerPrefs.SetFloat("TotalScore", totalScore += PlayerPrefs.GetFloat("LevelScore"));
         Debug.Log("TotalDeathCount: " + totalDeathCount);
         Debug.Log("TotalBloodLoss: " + totalBloodLoss);
+        Debug.Log("TotalScore: " + totalScore);
         
         if (SceneManager.GetActiveScene().name=="HighScore")
         {
@@ -78,5 +78,6 @@ public class ScoreManager : MonoBehaviour {
         levelBloodLoss = 50 - bloodManager.bloodLevel;
 
         levelScore = Mathf.Pow(10, Mathf.Round(bloodManager.bloodLevel - PlayerPrefs.GetFloat("DeathCount")) / 100f) * levelTime;
+        PlayerPrefs.SetFloat("LevelScore", levelScore);
     }
 }

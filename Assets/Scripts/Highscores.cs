@@ -2,31 +2,36 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Highscores : MonoBehaviour
 {
+    static Highscores instance;
+    public LevelComplete levelComplete;
+
+    public Highscore[] highscoresList;
+    DisplayHighscores highscoreDisplay;
+    OnScoreAdded onScoreAdded;
+    OnNameExists onNameExists;
 
     const string privateCode = "GliznKcRNEuWPkiQ4bsSjQTRwvLNZYWUSUzEQq5uyZHw";
     const string publicCode = "5b06a6e6191a850bcc28e065";
     const string webURL = "http://dreamlo.com/lb/";
-    public Highscore[] highscoresList;
-    DisplayHighscores highscoreDisplay;
-    static Highscores instance;
-    public LevelComplete levelComplete;
+
+    public string playerName;
+    public float playerScore;
+
     delegate void OnScoreAdded();
-    OnScoreAdded onScoreAdded;
     delegate void OnNameExists();
-    OnNameExists onNameExists;
 
     public TextMeshProUGUI enterNameText;
     public TextMeshProUGUI enterNameFieldText;
+    public TMP_InputField inputField;
 
     void Awake()
     {
         instance = this;
         highscoreDisplay = GetComponent<DisplayHighscores>();
-
-        TryInsertingName("Harald3", 1338);
     }
 
     public static void AddNewHighScore(string username, float score)
@@ -42,7 +47,6 @@ public class Highscores : MonoBehaviour
         if (string.IsNullOrEmpty(www.error))
         {
             Debug.Log("Upload Successful");
-
         }
         else
         {
@@ -94,32 +98,29 @@ public class Highscores : MonoBehaviour
 
             if (ContainsName(www.text, playerName))
             {
-                //enterNameText.text="Please enter another name.";
-                //enterNameFieldText.text="Try again!";
+                enterNameText.text="Please enter another name.";
+                enterNameFieldText.text="Try again!";
                 //onNameExists();
             }
             else
             {
                 AddNewHighScore(playerName, playerScore);
                 //onScoreAdded();
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
-
         }
     }
 
     public void OnAddNamePressed()
     {
-
-        //TryInsertingName();
-
+        playerName = inputField.text;
+        playerScore = Mathf.Round(PlayerPrefs.GetFloat("TotalScore"));
+        TryInsertingName(playerName, playerScore);
     }
-    
 
     public void TryInsertingName(string playerName, float playerScore)
-    {
-        
-        StartCoroutine(Check(playerName, playerScore));
-        
+    {  
+        StartCoroutine(Check(playerName, playerScore)); 
     }
 
     private bool ContainsName(string textStream,string playerName)
@@ -135,8 +136,6 @@ public class Highscores : MonoBehaviour
                 Debug.Log(username);
                 return true;
             }
-            
-
         }
         return false;
     }

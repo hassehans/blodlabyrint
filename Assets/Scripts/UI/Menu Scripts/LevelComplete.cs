@@ -21,13 +21,17 @@ public class LevelComplete : MonoBehaviour {
     public TextMeshProUGUI statsDeaths;
     public TextMeshProUGUI statsBlood;
     public TextMeshProUGUI statsScore;
-    public string sceneName;
+
+    public TextMeshProUGUI totalStatsTitle;
+    public TextMeshProUGUI totalStatsTimeLeft;
+    public TextMeshProUGUI totalStatsDeaths;
+    public TextMeshProUGUI totalStatsBlood;
+    public TextMeshProUGUI totalStatsScore;
+
     public bool levelIsCompleted = false;
 
     void Start()
     {
-        Scene currentScene = SceneManager.GetActiveScene();
-        sceneName = currentScene.name;
         highscoreManager = GetComponent<Highscores>();
     }
     public void FinishLevel()
@@ -50,23 +54,25 @@ public class LevelComplete : MonoBehaviour {
          * something UI SetActive
          * }*/
         UICanvas.SetActive(false);
-        if (sceneName == "Level 10")
-        {
-            Debug.Log("HEEEEEEJ " + Mathf.Round(PlayerPrefs.GetFloat("TotalScore")));
-            Highscores.AddNewHighScore("Fis", Mathf.Round(PlayerPrefs.GetFloat("TotalScore")));
-        }
-        else
-        {
-            levelCompleteWrapper.SetActive(true);
 
-            statsTitle.text = "Statistics " + gameManager.activeScene.name.ToString();
-            statsTimeLeft.text = "Time left: " + gameManager.timeLeft.ToString("F2");
-            statsDeaths.text = "Deaths: " + scoreManager.deathCount.ToString();
-            statsBlood.text = "Blood left: " + bloodManager.bloodLevel.ToString();
-            statsScore.text = "Score: " + scoreManager.levelScore.ToString("F2");
+        levelCompleteWrapper.SetActive(true);
+        Debug.Log("levelCompleteWrapper passed!");
+
+        statsTitle.text = "Statistics " + gameManager.activeScene.name.ToString();
+        statsTimeLeft.text = "Time left: " + gameManager.timeLeft.ToString("F2");
+        statsDeaths.text = "Deaths: " + scoreManager.deathCount.ToString();
+        statsBlood.text = "Blood left: " + bloodManager.bloodLevel.ToString();
+        statsScore.text = "Score: " + scoreManager.levelScore.ToString("F2");
+
+        if (gameManager.activeScene.name=="Level 10")
+        {
+            totalStatsTitle.text = "Total Statistics";
+            totalStatsTimeLeft.text = "Time left: " + PlayerPrefs.GetFloat("TotalTime").ToString("F2");
+            totalStatsDeaths.text = "Deaths: " + PlayerPrefs.GetFloat("TotalDeaths").ToString();
+            totalStatsBlood.text = "Blood left: " + PlayerPrefs.GetFloat("TotalBloodLoss").ToString();
+            totalStatsScore.text = "Score: " + PlayerPrefs.GetFloat("TotalScore").ToString("F2");
         }
-        
-        
+      
     }
 
     public void LoadMenu()

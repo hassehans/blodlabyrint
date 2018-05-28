@@ -12,9 +12,6 @@ EditorBuildSettings:
     path: Assets/_Scenes/LevelScenes/MainMenu.unity
     guid: 49f3768634e57814b80eee77c198ffdf
   - enabled: 1
-    path: Assets/_Scenes/LevelScenes/Highscore.unity
-    guid: 876080772fa40554eba0b0d0f72191f4
-  - enabled: 1
     path: Assets/_Scenes/LevelScenes/Level 1.unity
     guid: 4b085dd629678614ca871fe7b0ae65e5
   - enabled: 1
@@ -33,17 +30,20 @@ EditorBuildSettings:
     path: Assets/_Scenes/LevelScenes/Level 6.unity
     guid: d56bd76eb209f3d4b93e7147c66c66d3
   - enabled: 0
-    path: Assets/__DELETED_GUID_Trash/1d4ce4f7e52538f4c9ecbacc2c8a2ad7
-    guid: 1d4ce4f7e52538f4c9ecbacc2c8a2ad7
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 0
-    path: Assets/__DELETED_GUID_Trash/231ea12831bae914aa13dc98f9361fca
-    guid: 231ea12831bae914aa13dc98f9361fca
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/_Scenes/LevelScenes/Level 9.unity
     guid: 8f78d82733f091d44bcbb40e002905a2
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/_Scenes/LevelScenes/Level 10.unity
-    guid: aca162bfe8d4aaf4e85b2ea42558b85b
+    path: Assets/_Scenes/LevelScenes/Highscore.unity
+    guid: 876080772fa40554eba0b0d0f72191f4
   - enabled: 1
     path: Assets/_Scenes/LevelScenes/Credits.unity
     guid: c36b474a881414840803a30e613ec155
