@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Highscores : MonoBehaviour
 {
@@ -16,6 +17,9 @@ public class Highscores : MonoBehaviour
     OnScoreAdded onScoreAdded;
     delegate void OnNameExists();
     OnNameExists onNameExists;
+
+    public TextMeshProUGUI enterNameText;
+    public TextMeshProUGUI enterNameFieldText;
 
     void Awake()
     {
@@ -90,6 +94,8 @@ public class Highscores : MonoBehaviour
 
             if (ContainsName(www.text, playerName))
             {
+                //enterNameText.text="Please enter another name.";
+                //enterNameFieldText.text="Try again!";
                 //onNameExists();
             }
             else
