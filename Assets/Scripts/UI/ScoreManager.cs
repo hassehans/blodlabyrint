@@ -42,27 +42,26 @@ public class ScoreManager : MonoBehaviour {
         Debug.Log("DeathCount: " + deathCount);
         Debug.Log("LevelBloodLoss: " + levelBloodLoss);
 
-        deathCount = PlayerPrefs.GetFloat("DeathCount");
+        totalScore = PlayerPrefs.GetFloat("TotalScore");
         totalScore += levelScore;
-        totalDeathCount += deathCount;
-        totalBloodLoss += levelBloodLoss;
+        PlayerPrefs.SetFloat("TotalScore", totalScore);
 
-        PlayerPrefs.SetFloat("TotalDeathCount", totalDeathCount += PlayerPrefs.GetFloat("DeathCount"));
-        PlayerPrefs.SetFloat("TotalBloodLoss", totalBloodLoss += PlayerPrefs.GetFloat("LevelBloodLoss"));
-        PlayerPrefs.SetFloat("TotalScore", totalScore += PlayerPrefs.GetFloat("LevelScore"));
+        totalTime = PlayerPrefs.GetFloat("TotalTime");
+        totalTime += levelTime;
+        PlayerPrefs.SetFloat("TotalTime", totalTime);
+
+        totalDeathCount = PlayerPrefs.GetFloat("TotalDeathCount");
+        totalDeathCount += deathCount;
+        PlayerPrefs.SetFloat("TotalDeathCount", totalDeathCount);
+
+        totalBloodLoss = PlayerPrefs.GetFloat("TotalBloodLoss");
+        totalBloodLoss += levelBloodLoss;
+        PlayerPrefs.SetFloat("TotalBloodLoss", totalBloodLoss);
+
+        PlayerPrefs.SetFloat("TotalScore", (totalScore += PlayerPrefs.GetFloat("LevelScore")));
         Debug.Log("TotalDeathCount: " + totalDeathCount);
         Debug.Log("TotalBloodLoss: " + totalBloodLoss);
         Debug.Log("TotalScore: " + totalScore);
-        
-        if (SceneManager.GetActiveScene().name=="HighScore")
-        {
-            if (totalScore > PlayerPrefs.GetFloat("HighScore", 0))
-            {
-                PlayerPrefs.GetFloat("HighScore", totalScore);
-                highScoreText.text = totalScore.ToString();
-                PlayerPrefs.SetFloat("HighScore", totalScore);
-            }
-        }
     }
 
     public void ResetHighScore()
@@ -74,10 +73,11 @@ public class ScoreManager : MonoBehaviour {
     public void ScoreCalculator()
     {
         Debug.Log("Update score.");
-        levelTime = gameManager.timeLeft;
-        levelBloodLoss = 50 - bloodManager.bloodLevel;
+        levelTime = gameManager.finishTime;
+        //PlayerPrefs.SetFloat("LevelTime", levelTime);
+        deathCount = PlayerPrefs.GetFloat("DeathCount");
 
-        levelScore = Mathf.Pow(10, Mathf.Round(bloodManager.bloodLevel - PlayerPrefs.GetFloat("DeathCount")) / 100f) * levelTime;
+        levelScore = Mathf.Pow(10, Mathf.Round(levelBloodLoss - deathCount) / 100f) * levelTime;
         PlayerPrefs.SetFloat("LevelScore", levelScore);
     }
 }

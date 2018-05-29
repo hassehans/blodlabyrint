@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour {
     public TextMeshProUGUI bloodText;
     public TextMeshProUGUI deathsText;
 
-    float time;
+    public float finishTime;
     public float timeLeft = 120.0f;
     public float reloadTime = 3f;
 
@@ -57,9 +57,9 @@ public class GameManager : MonoBehaviour {
         bloodManager.die += GameOverHolder;
 
         scoreManager.levelScore = 0;
-        scoreManager.deathCount = 0;
+        scoreManager.deathCount = PlayerPrefs.GetFloat("DeathCount");
 
-        timerText.text = time.ToString();
+        timerText.text = finishTime.ToString();
         bloodText.text = bloodManager.bloodLevel.ToString();
         deathsText.text = scoreManager.deathCount.ToString();
     }
@@ -69,7 +69,7 @@ public class GameManager : MonoBehaviour {
         if (timeLeft > 0 && playerController.started && (bloodManager.alive || !levelComplete.levelIsCompleted))
         {
             timeLeft -= Time.deltaTime;
-            time = timeLeft;
+            finishTime = timeLeft;
         }
         else if (timeLeft < 0 && playerController.started)
         {
@@ -80,7 +80,7 @@ public class GameManager : MonoBehaviour {
             GameOverHolder();
         }
 
-        timerText.text = Mathf.Round(time).ToString();
+        timerText.text = Mathf.Round(finishTime).ToString();
         deathsText.text = PlayerPrefs.GetFloat("DeathCount").ToString();
 
         if (bloodManager.bloodLevel<=0)
