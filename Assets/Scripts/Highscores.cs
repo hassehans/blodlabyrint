@@ -36,6 +36,7 @@ public class Highscores : MonoBehaviour
 
     public static void AddNewHighScore(string username, float score)
     {
+        PlayerPrefs.SetString("LastLevelPlayed", "Level 1");
         instance.StartCoroutine(instance.UploadNewHighscore(username, score));
     }
 
