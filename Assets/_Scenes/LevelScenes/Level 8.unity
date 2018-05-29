@@ -12604,6 +12604,11 @@ Prefab:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 196126879}
+    - target: {fileID: 61306949254673718, guid: 059e2e224248a70418db51276f971778,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: -0.375
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 059e2e224248a70418db51276f971778, type: 2}
   m_IsPrefabParent: 0
