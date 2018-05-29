@@ -119,7 +119,12 @@ public class Highscores : MonoBehaviour
         playerScore = Mathf.Round(PlayerPrefs.GetFloat("TotalScore"));
         TryInsertingName(playerName, playerScore);
 
-        mainMenu.ResetAllPlayerPrefs();
+        //mainMenu.ResetAllPlayerPrefs();
+        PlayerPrefs.SetFloat("TotalTime", 0);
+        PlayerPrefs.SetFloat("TotalDeathCount", 0);
+        PlayerPrefs.SetFloat("TotalBloodLoss", 0);
+        PlayerPrefs.SetFloat("TotalScore", 0);
+        PlayerPrefs.SetString("LastLevelPlayed", "Level 1");
     }
 
     public void TryInsertingName(string playerName, float playerScore)
