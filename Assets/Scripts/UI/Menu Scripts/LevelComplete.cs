@@ -34,14 +34,13 @@ public class LevelComplete : MonoBehaviour {
     {
         highscoreManager = GetComponent<Highscores>();
     }
+
     public void FinishLevel()
     {
-        //gameManager.StartCoroutine("WaitForMeltAnimation");
-
-        //levelIsCompleted = true;
         scoreManager.deathCount = PlayerPrefs.GetFloat("DeathCount");
-        scoreManager.levelBloodLoss = bloodManager.bloodLevel;
+        scoreManager.levelBloodLoss = 50 - bloodManager.bloodLevel;
         Debug.Log("DeathCount: " + scoreManager.deathCount);
+
         scoreManager.UpdateScore();
 
         Debug.Log("Level completed.");
@@ -49,10 +48,6 @@ public class LevelComplete : MonoBehaviour {
         Debug.Log(">>>Setting timeScale to 0<<<");
         Time.timeScale = 0f;
 
-        /*if (activeLevel.name=="Level 10"){
-         * Congratulations! You beat the game!
-         * something UI SetActive
-         * }*/
         UICanvas.SetActive(false);
 
         levelCompleteWrapper.SetActive(true);
@@ -68,11 +63,10 @@ public class LevelComplete : MonoBehaviour {
         {
             totalStatsTitle.text = "Total Statistics";
             totalStatsTimeLeft.text = "Time left: " + PlayerPrefs.GetFloat("TotalTime").ToString("F2");
-            totalStatsDeaths.text = "Deaths: " + PlayerPrefs.GetFloat("TotalDeaths").ToString();
+            totalStatsDeaths.text = "Deaths: " + PlayerPrefs.GetFloat("TotalDeathCount").ToString();
             totalStatsBlood.text = "Blood left: " + PlayerPrefs.GetFloat("TotalBloodLoss").ToString();
             totalStatsScore.text = "Score: " + PlayerPrefs.GetFloat("TotalScore").ToString("F2");
-        }
-      
+        } 
     }
 
     public void LoadMenu()
