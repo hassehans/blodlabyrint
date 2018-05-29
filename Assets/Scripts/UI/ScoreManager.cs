@@ -64,7 +64,6 @@ public class ScoreManager : MonoBehaviour {
     {
         Debug.Log("Update score.");
         levelTime = gameManager.finishTime;
-        //PlayerPrefs.SetFloat("LevelTime", levelTime);
         deathCount = PlayerPrefs.GetFloat("DeathCount");
 
         levelScore = Mathf.Pow(10, Mathf.Round(levelBloodLoss - deathCount) / 100f) * levelTime;

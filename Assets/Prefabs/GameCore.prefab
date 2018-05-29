@@ -3841,14 +3841,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameIsPaused: 0
-  gameManager: {fileID: 0}
-  bloodManager: {fileID: 0}
-  levelComplete: {fileID: 0}
-  mainMenu: {fileID: 0}
-  pauseMenuCanvas: {fileID: 0}
-  resumeButton: {fileID: 0}
-  retryButton: {fileID: 0}
-  levelTitleText: {fileID: 0}
+  gameManager: {fileID: 114249000784536004}
+  bloodManager: {fileID: 114403714838590772}
+  levelComplete: {fileID: 114007357364766986}
+  mainMenu: {fileID: 114122676810269352}
+  pauseMenuCanvas: {fileID: 1886584295282816}
+  resumeButton: {fileID: 1240880264482772}
+  retryButton: {fileID: 1799473196633836}
+  levelTitleText: {fileID: 114611148611098494}
 --- !u!114 &114331640327167680
 MonoBehaviour:
   m_ObjectHideFlags: 1

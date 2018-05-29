@@ -11,7 +11,6 @@ public class LevelComplete : MonoBehaviour {
     public GameManager gameManager;
     public ScoreManager scoreManager;
     public BloodManager bloodManager;
-    public Highscores highscoreManager;
     public GameObject levelCompleteWrapper;
     public GameObject nextlevelButton;
     public GameObject UICanvas;
@@ -31,11 +30,6 @@ public class LevelComplete : MonoBehaviour {
     public bool level10Finished = false;
 
     public bool levelIsCompleted = false;
-
-    void Start()
-    {
-        highscoreManager = GetComponent<Highscores>();
-    }
 
     public void FinishLevel()
     {
