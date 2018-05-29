@@ -62,10 +62,10 @@ public class LevelComplete : MonoBehaviour {
         if (gameManager.activeScene.name=="Level 10")
         {
             totalStatsTitle.text = "Total Statistics";
-            totalStatsTimeLeft.text = "Time left: " + PlayerPrefs.GetFloat("TotalTime").ToString("F2");
-            totalStatsDeaths.text = "Deaths: " + PlayerPrefs.GetFloat("TotalDeathCount").ToString();
-            totalStatsBlood.text = "Blood left: " + PlayerPrefs.GetFloat("TotalBloodLoss").ToString();
-            totalStatsScore.text = "Score: " + PlayerPrefs.GetFloat("TotalScore").ToString("F2");
+            totalStatsTimeLeft.text = "Total Time Spent: " + PlayerPrefs.GetFloat("TotalTime").ToString("F2");
+            totalStatsDeaths.text = "Total Deaths: " + PlayerPrefs.GetFloat("TotalDeathCount").ToString();
+            totalStatsBlood.text = "Total Blood Lost: " + PlayerPrefs.GetFloat("TotalBloodLoss").ToString();
+            totalStatsScore.text = "Total Score: " + PlayerPrefs.GetFloat("TotalScore").ToString("F2");
         } 
     }
 
