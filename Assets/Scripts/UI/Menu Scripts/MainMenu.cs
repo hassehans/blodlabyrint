@@ -10,7 +10,6 @@ public class MainMenu : MonoBehaviour {
     {
         ResetAllPlayerPrefs();
         SceneManager.LoadScene("Level 1");
-        Debug.LogWarning("Change scene in NewGame method to correct scene please!");
     }
 
     //Quits the game.
