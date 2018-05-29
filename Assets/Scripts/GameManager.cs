@@ -80,7 +80,7 @@ public class GameManager : MonoBehaviour {
             GameOverHolder();
         }
 
-        timerText.text = Mathf.Round(finishTime).ToString();
+        timerText.text = Mathf.Round(finishTime).ToString("F2");
         deathsText.text = PlayerPrefs.GetFloat("DeathCount").ToString();
 
         if (bloodManager.bloodLevel<=0)
@@ -153,5 +153,4 @@ public class GameManager : MonoBehaviour {
         Time.timeScale = 0f;
         pauseWrapper.SetActive(true);
     }
-
 }

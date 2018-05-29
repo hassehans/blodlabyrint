@@ -57,8 +57,7 @@ public class ScoreManager : MonoBehaviour {
         totalBloodLoss = PlayerPrefs.GetFloat("TotalBloodLoss");
         totalBloodLoss += levelBloodLoss;
         PlayerPrefs.SetFloat("TotalBloodLoss", totalBloodLoss);
-
-        PlayerPrefs.SetFloat("TotalScore", (totalScore += PlayerPrefs.GetFloat("LevelScore")));
+        
         Debug.Log("TotalDeathCount: " + totalDeathCount);
         Debug.Log("TotalBloodLoss: " + totalBloodLoss);
         Debug.Log("TotalScore: " + totalScore);
