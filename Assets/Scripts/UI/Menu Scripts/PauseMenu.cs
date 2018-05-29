@@ -32,16 +32,7 @@ public class PauseMenu : MonoBehaviour {
 
     public void PausedGameCheck()
     {
-        //if (bloodManager.alive)
-        //{
-        //    retryButton.SetActive(false);
-        //    resumeButton.SetActive(true);
-        //}
-        //else if (!bloodManager.alive)
-        //{
-        //    retryButton.SetActive(true);
-        //    resumeButton.SetActive(false);
-        //}
+        
 
         if (gameIsPaused)
         {
@@ -77,6 +68,15 @@ public class PauseMenu : MonoBehaviour {
 
     public void LoadMenu()
     {
+        if (levelComplete.level10Finished)
+        {
+            PlayerPrefs.SetFloat("TotalTime", 0);
+            PlayerPrefs.SetFloat("TotalDeathCount", 0);
+            PlayerPrefs.SetFloat("TotalBloodLoss", 0);
+            PlayerPrefs.SetFloat("TotalScore", 0);
+            PlayerPrefs.SetString("LastLevelPlayed", "Level 1");
+            levelComplete.level10Finished = false;
+        }
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
     }

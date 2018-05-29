@@ -2190,7 +2190,12 @@ MonoBehaviour:
   statsDeaths: {fileID: 114835820906871160}
   statsBlood: {fileID: 114579171594592202}
   statsScore: {fileID: 114707709332786256}
-  sceneName: 
+  totalStatsTitle: {fileID: 0}
+  totalStatsTimeLeft: {fileID: 0}
+  totalStatsDeaths: {fileID: 0}
+  totalStatsBlood: {fileID: 0}
+  totalStatsScore: {fileID: 0}
+  level10Finished: 0
   levelIsCompleted: 0
 --- !u!114 &114007682973240184
 MonoBehaviour:
@@ -3337,13 +3342,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb9820501c3862c4abd80858e39bd51e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
-  bloodManager: {fileID: 0}
-  levelComplete: {fileID: 0}
-  pauseMenuCanvas: {fileID: 0}
-  resumeButton: {fileID: 0}
-  retryButton: {fileID: 0}
-  levelTitleText: {fileID: 0}
+  gameIsPaused: 0
+  gameManager: {fileID: 114249000784536004}
+  bloodManager: {fileID: 114403714838590772}
+  levelComplete: {fileID: 114007357364766986}
+  mainMenu: {fileID: 114723432827854180}
+  pauseMenuCanvas: {fileID: 1886584295282816}
+  resumeButton: {fileID: 1240880264482772}
+  retryButton: {fileID: 1799473196633836}
+  levelTitleText: {fileID: 114611148611098494}
 --- !u!114 &114193848170791726
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3561,6 +3568,7 @@ MonoBehaviour:
   timerText: {fileID: 114942889255650004}
   bloodText: {fileID: 114853253769853366}
   deathsText: {fileID: 114444293325829820}
+  finishTime: 0
   timeLeft: 120
   reloadTime: 3
   completedLevel: 0
@@ -3812,9 +3820,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb9820501c3862c4abd80858e39bd51e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameIsPaused: 0
   gameManager: {fileID: 114249000784536004}
   bloodManager: {fileID: 114403714838590772}
   levelComplete: {fileID: 114007357364766986}
+  mainMenu: {fileID: 0}
   pauseMenuCanvas: {fileID: 1886584295282816}
   resumeButton: {fileID: 1240880264482772}
   retryButton: {fileID: 1799473196633836}
@@ -3830,9 +3840,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb9820501c3862c4abd80858e39bd51e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameIsPaused: 0
   gameManager: {fileID: 0}
   bloodManager: {fileID: 0}
   levelComplete: {fileID: 0}
+  mainMenu: {fileID: 0}
   pauseMenuCanvas: {fileID: 0}
   resumeButton: {fileID: 0}
   retryButton: {fileID: 0}
@@ -4060,7 +4072,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 114249000784536004}
   bloodManager: {fileID: 114403714838590772}
-  highScoreText: {fileID: 0}
   levelScore: 0
   totalScore: 0
   deathCount: 0

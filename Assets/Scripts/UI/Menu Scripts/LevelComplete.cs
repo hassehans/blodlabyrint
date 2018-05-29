@@ -28,6 +28,8 @@ public class LevelComplete : MonoBehaviour {
     public TextMeshProUGUI totalStatsBlood;
     public TextMeshProUGUI totalStatsScore;
 
+    public bool level10Finished = false;
+
     public bool levelIsCompleted = false;
 
     void Start()
@@ -66,6 +68,7 @@ public class LevelComplete : MonoBehaviour {
             totalStatsDeaths.text = "Total Deaths: " + PlayerPrefs.GetFloat("TotalDeathCount").ToString();
             totalStatsBlood.text = "Total Blood Lost: " + PlayerPrefs.GetFloat("TotalBloodLoss").ToString();
             totalStatsScore.text = "Total Score: " + PlayerPrefs.GetFloat("TotalScore").ToString("F2");
+            level10Finished = true;
         } 
     }
 

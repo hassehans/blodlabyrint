@@ -11238,6 +11238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelComplete: {fileID: 0}
+  mainMenu: {fileID: 0}
   playerName: 
   playerScore: 0
   enterNameText: {fileID: 527935505}
@@ -14900,6 +14901,7 @@ MonoBehaviour:
   gameManager: {fileID: 2020491599}
   bloodManager: {fileID: 2145967201}
   levelComplete: {fileID: 2020491598}
+  mainMenu: {fileID: 0}
   pauseMenuCanvas: {fileID: 382765134}
   resumeButton: {fileID: 1072392635}
   retryButton: {fileID: 1337253855}
@@ -35007,10 +35009,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameIsPaused: 0
-  gameManager: {fileID: 0}
-  bloodManager: {fileID: 0}
-  levelComplete: {fileID: 0}
-  pauseMenuCanvas: {fileID: 0}
+  gameManager: {fileID: 2020491599}
+  bloodManager: {fileID: 2145967201}
+  levelComplete: {fileID: 2020491598}
+  mainMenu: {fileID: 362373428}
+  pauseMenuCanvas: {fileID: 382765134}
   resumeButton: {fileID: 0}
   retryButton: {fileID: 0}
   levelTitleText: {fileID: 0}
@@ -66795,6 +66798,7 @@ MonoBehaviour:
   totalStatsDeaths: {fileID: 1362113530}
   totalStatsBlood: {fileID: 217099726}
   totalStatsScore: {fileID: 778395617}
+  level10Finished: 0
   levelIsCompleted: 0
 --- !u!114 &2020491599
 MonoBehaviour:
