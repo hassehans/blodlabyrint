@@ -11,6 +11,7 @@ public class PauseMenu : MonoBehaviour {
     public GameManager gameManager;
     public BloodManager bloodManager;
     public LevelComplete levelComplete;
+    public MainMenu mainMenu;
 
     public GameObject pauseMenuCanvas;
     public GameObject resumeButton;

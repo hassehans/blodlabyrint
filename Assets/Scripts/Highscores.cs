@@ -8,6 +8,7 @@ public class Highscores : MonoBehaviour
 {
     static Highscores instance;
     public LevelComplete levelComplete;
+    public MainMenu mainMenu;
 
     public Highscore[] highscoresList;
     DisplayHighscores highscoreDisplay;
@@ -117,6 +118,8 @@ public class Highscores : MonoBehaviour
         playerName = inputField.text;
         playerScore = Mathf.Round(PlayerPrefs.GetFloat("TotalScore"));
         TryInsertingName(playerName, playerScore);
+
+        mainMenu.ResetAllPlayerPrefs();
     }
 
     public void TryInsertingName(string playerName, float playerScore)
