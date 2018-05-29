@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class DisplayHighscores : MonoBehaviour
 {
 
-    public Text[] highscoreText;
+    public TextMeshProUGUI[] highscoreText;
     Highscores highscoreManager;
     // Use this for initialization
     void Start()
