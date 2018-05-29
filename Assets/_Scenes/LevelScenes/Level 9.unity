@@ -23431,6 +23431,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114985968860538032, guid: c9bea4ad440ddfd469125d188458a0d6,
+        type: 2}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 2020491600}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c9bea4ad440ddfd469125d188458a0d6, type: 2}
   m_IsPrefabParent: 0
@@ -62529,6 +62534,12 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 2020491597}
   m_Script: {fileID: 11500000, guid: 611ab30dcf731214aa70d25b89e89cc5, type: 3}
+--- !u!114 &2020491600 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114293170988648400, guid: 256e99f426e091344b48332580525f01,
+    type: 2}
+  m_PrefabInternal: {fileID: 2020491597}
+  m_Script: {fileID: 11500000, guid: cb9820501c3862c4abd80858e39bd51e, type: 3}
 --- !u!1 &2023117260
 GameObject:
   m_ObjectHideFlags: 0
