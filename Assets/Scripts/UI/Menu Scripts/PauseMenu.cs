@@ -6,7 +6,7 @@ using TMPro;
 
 public class PauseMenu : MonoBehaviour {
 
-    public static bool gameIsPaused = false;
+    public bool gameIsPaused = false;
 
     public GameManager gameManager;
     public BloodManager bloodManager;

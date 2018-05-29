@@ -1,6 +1,8 @@
-﻿{
+{
     "name": "GameScripts",
-    "optionalUnityReferences": [
-        "TestAssemblies"
-    ]
+    "references": [],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false
 }

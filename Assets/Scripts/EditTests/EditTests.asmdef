@@ -1,9 +1,10 @@
-﻿{
+{
     "name": "EditTests",
-    "optionalUnityReferences": [
-        "TestAssemblies"
-    ],
+    "references": [],
+    "optionalUnityReferences": [],
     "includePlatforms": [
         "Editor"
-    ]
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false
 }
