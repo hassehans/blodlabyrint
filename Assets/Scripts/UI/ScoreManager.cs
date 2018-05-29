@@ -11,9 +11,6 @@ public class ScoreManager : MonoBehaviour {
     public GameManager gameManager;
     public BloodManager bloodManager;
 
-    
-    public TextMeshProUGUI highScoreText;
-
     public float levelScore;
     public float totalScore;
 
@@ -61,12 +58,6 @@ public class ScoreManager : MonoBehaviour {
         Debug.Log("TotalDeathCount: " + totalDeathCount);
         Debug.Log("TotalBloodLoss: " + totalBloodLoss);
         Debug.Log("TotalScore: " + totalScore);
-    }
-
-    public void ResetHighScore()
-    {
-        PlayerPrefs.SetInt("HighScore", 0);
-        highScoreText.text = PlayerPrefs.GetFloat("HighScore", 0).ToString(); ;
     }
 
     public void ScoreCalculator()
