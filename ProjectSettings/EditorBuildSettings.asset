@@ -5,9 +5,6 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/_Scenes/Joakim_Scene.unity
-    guid: fa15fe6bfb876a64a91128b8469e1255
   - enabled: 1
     path: Assets/_Scenes/LevelScenes/MainMenu.unity
     guid: 49f3768634e57814b80eee77c198ffdf
@@ -29,18 +26,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/LevelScenes/Level 6.unity
     guid: d56bd76eb209f3d4b93e7147c66c66d3
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/_Scenes/LevelScenes/Level 7.unity
+    guid: 3f981a2a2760c1e408450881442ced33
+  - enabled: 1
+    path: Assets/_Scenes/LevelScenes/Level 8.unity
+    guid: a4df12d6568039a4d9ce04fa0171a9f4
   - enabled: 1
     path: Assets/_Scenes/LevelScenes/Level 9.unity
     guid: 8f78d82733f091d44bcbb40e002905a2
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/_Scenes/LevelScenes/Level 10.unity
+    guid: cc0c8d7a44937e34b8c02a1941750037
   - enabled: 1
     path: Assets/_Scenes/LevelScenes/Highscore.unity
     guid: 876080772fa40554eba0b0d0f72191f4
