@@ -138,6 +138,7 @@ public class GameManager : MonoBehaviour {
     void GameOver()
     {
         Debug.Log("Game over!");
+        bloodManager.deathCounter += 1;
 
         pauseMenu.retryButton.SetActive(true);
         pauseMenu.resumeButton.SetActive(false);

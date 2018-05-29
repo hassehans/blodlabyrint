@@ -50,7 +50,6 @@ public class BloodManager : MonoBehaviour {
                 SoundEffects.instance.DeathWin();
             }
             alive = false;
-            deathCounter += 1;
 
             die.Invoke();
         }
