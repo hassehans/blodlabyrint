@@ -121,7 +121,8 @@ public class Highscores : MonoBehaviour
 
     public void TryInsertingName(string playerName, float playerScore)
     {  
-        StartCoroutine(Check(playerName, playerScore)); 
+        StartCoroutine(Check(playerName, playerScore));
+        Time.timeScale = 1f;
     }
 
     private bool ContainsName(string textStream,string playerName)
