@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     public AnimationClip meltAnimation;
     public AnimationClip spawnAnimation;
     private SpriteRenderer mySpriteRenderer;
+    public PauseMenu pauseMenu;
 
     public Action looseBlood;
 
@@ -41,7 +42,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && attackActive != true)
+        if (Input.GetKeyDown(KeyCode.Space) && attackActive != true && !pauseMenu.gameIsPaused)
         {
             attackActive = true;
             StartCoroutine(PauseMovement());

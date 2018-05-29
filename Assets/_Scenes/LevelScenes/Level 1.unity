@@ -9518,6 +9518,12 @@ Transform:
   m_Father: {fileID: 425956200}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &980453565 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114293170988648400, guid: 256e99f426e091344b48332580525f01,
+    type: 2}
+  m_PrefabInternal: {fileID: 1872981681}
+  m_Script: {fileID: 11500000, guid: cb9820501c3862c4abd80858e39bd51e, type: 3}
 --- !u!1 &987791144
 GameObject:
   m_ObjectHideFlags: 0
@@ -13365,6 +13371,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114985968860538032, guid: c9bea4ad440ddfd469125d188458a0d6,
+        type: 2}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 980453565}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c9bea4ad440ddfd469125d188458a0d6, type: 2}
   m_IsPrefabParent: 0
@@ -13691,8 +13702,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelComplete: {fileID: 0}
+  playerName: 
+  playerScore: 0
   enterNameText: {fileID: 0}
   enterNameFieldText: {fileID: 0}
+  inputField: {fileID: 0}
 --- !u!4 &1396748290
 Transform:
   m_ObjectHideFlags: 0
