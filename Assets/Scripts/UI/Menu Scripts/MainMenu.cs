@@ -8,6 +8,7 @@ public class MainMenu : MonoBehaviour {
     //Load the first level in the game.
     public void NewGame()
     {
+        ResetAllPlayerPrefs();
         SceneManager.LoadScene("Level 1");
         Debug.LogWarning("Change scene in NewGame method to correct scene please!");
     }
@@ -41,5 +42,13 @@ public class MainMenu : MonoBehaviour {
     {
         Debug.Log("Load last non-completed scene.");
         SceneManager.LoadScene(PlayerPrefs.GetString("LastLevelPlayed"));
+    }
+
+    public void ResetAllPlayerPrefs()
+    {
+        PlayerPrefs.SetFloat("TotalTime", 0);
+        PlayerPrefs.SetFloat("TotalDeathCount", 0);
+        PlayerPrefs.SetFloat("TotalBloodLoss", 0);
+        PlayerPrefs.SetFloat("TotalScore", 0);
     }
 }
