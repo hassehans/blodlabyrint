@@ -54,6 +54,12 @@ public class MainMenu : MonoBehaviour {
         SceneManager.LoadScene(PlayerPrefs.GetString("LastLevelPlayed"));
     }
 
+    public void HowToPlay()
+    {
+        Debug.Log("View How to play.");
+        SceneManager.LoadScene("HowToPlay");
+    }
+
     public void ResetAllPlayerPrefs()
     {
         PlayerPrefs.SetFloat("TotalTime", 0);
