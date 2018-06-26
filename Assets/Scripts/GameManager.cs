@@ -59,7 +59,7 @@ public class GameManager : MonoBehaviour {
         scoreManager.levelScore = 0;
         scoreManager.deathCount = PlayerPrefs.GetFloat("DeathCount");
 
-        timerText.text = finishTime.ToString();
+        timerText.text = finishTime.ToString("F2");
         bloodText.text = bloodManager.bloodLevel.ToString();
         deathsText.text = scoreManager.deathCount.ToString();
     }
@@ -80,7 +80,7 @@ public class GameManager : MonoBehaviour {
             GameOverHolder();
         }
 
-        timerText.text = Mathf.Round(finishTime).ToString("F2");
+        timerText.text = finishTime.ToString("F2");
         deathsText.text = PlayerPrefs.GetFloat("DeathCount").ToString();
 
         if (bloodManager.bloodLevel<=0)
