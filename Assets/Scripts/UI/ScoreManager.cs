@@ -1,10 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using TMPro;
-using UnityEngine;
-using UnityEngine.UI;
-using System;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine;
 
 public class ScoreManager : MonoBehaviour {
 
@@ -67,6 +61,11 @@ public class ScoreManager : MonoBehaviour {
         deathCount = PlayerPrefs.GetFloat("DeathCount");
 
         levelScore = Mathf.Pow(10, Mathf.Round(levelBloodLoss - deathCount) / 100f) * levelTime;
+        if (bloodManager.bloodStart == bloodManager.bloodLevel)
+        {
+            levelScore += 25f;
+            print("Got Extra score when not taking damage!");
+        }
         PlayerPrefs.SetFloat("LevelScore", levelScore);
     }
 }

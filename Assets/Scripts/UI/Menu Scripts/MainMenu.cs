@@ -1,12 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour {
 
     //Load the first level in the game.
-
     void Update()
     {
         if (Input.GetKey(KeyCode.AltGr) && Input.GetKey(KeyCode.Keypad5))
@@ -15,7 +12,6 @@ public class MainMenu : MonoBehaviour {
             ResetAllPlayerPrefs();
             Debug.Log(PlayerPrefs.GetFloat("TotalScore"));
         }
-
     }
     public void NewGame()
     {
@@ -68,6 +64,4 @@ public class MainMenu : MonoBehaviour {
         PlayerPrefs.SetFloat("TotalScore", 0);
         PlayerPrefs.SetString("LastLevelPlayed", "Level 1");
     }
-
-    
 }

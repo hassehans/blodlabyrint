@@ -11237,12 +11237,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43b3bb70077b61249a75ec21260cc2a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelComplete: {fileID: 0}
+  levelComplete: {fileID: 2020491598}
   mainMenu: {fileID: 0}
   playerName: 
   playerScore: 0
   enterNameText: {fileID: 527935505}
-  enterNameFieldText: {fileID: 1185697409}
+  enterNameFieldText: {fileID: 2132367837}
   inputField: {fileID: 1752124521}
 --- !u!4 &341099117
 Transform:
@@ -12274,10 +12274,10 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -12842,10 +12842,10 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -14901,7 +14901,7 @@ MonoBehaviour:
   gameManager: {fileID: 2020491599}
   bloodManager: {fileID: 2145967201}
   levelComplete: {fileID: 2020491598}
-  mainMenu: {fileID: 0}
+  mainMenu: {fileID: 362373428}
   pauseMenuCanvas: {fileID: 382765134}
   resumeButton: {fileID: 1072392635}
   retryButton: {fileID: 1337253855}
@@ -26821,11 +26821,6 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 831673159}
   m_Script: {fileID: 11500000, guid: af59b7f2af4ab8849961ede1d4664550, type: 3}
---- !u!1 &831673161 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1705279588990900, guid: c9bea4ad440ddfd469125d188458a0d6,
-    type: 2}
-  m_PrefabInternal: {fileID: 831673159}
 --- !u!1 &838134268
 GameObject:
   m_ObjectHideFlags: 0
@@ -35014,9 +35009,9 @@ MonoBehaviour:
   levelComplete: {fileID: 2020491598}
   mainMenu: {fileID: 362373428}
   pauseMenuCanvas: {fileID: 382765134}
-  resumeButton: {fileID: 0}
-  retryButton: {fileID: 0}
-  levelTitleText: {fileID: 0}
+  resumeButton: {fileID: 1072392635}
+  retryButton: {fileID: 1337253855}
+  levelTitleText: {fileID: 2095466459}
 --- !u!114 &1090599905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35046,10 +35041,10 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -50085,6 +50080,11 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1 &1546680905 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1705279588990900, guid: c9bea4ad440ddfd469125d188458a0d6,
+    type: 2}
+  m_PrefabInternal: {fileID: 831673159}
 --- !u!1 &1550275957
 GameObject:
   m_ObjectHideFlags: 0
@@ -58384,10 +58384,10 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -60534,10 +60534,10 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -71670,7 +71670,7 @@ MonoBehaviour:
   bloodLevel: 50
   alive: 0
   deathCounter: 0
-  player: {fileID: 831673161}
+  player: {fileID: 1546680905}
   movement: {fileID: 831673160}
 --- !u!4 &2145967202
 Transform:

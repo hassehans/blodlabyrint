@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 
@@ -14,6 +12,7 @@ public class LevelComplete : MonoBehaviour {
     public GameObject levelCompleteWrapper;
     public GameObject nextlevelButton;
     public GameObject UICanvas;
+    public GameObject addBloodText;
 
     public TextMeshProUGUI statsTitle;
     public TextMeshProUGUI statsTimeLeft;
@@ -30,7 +29,7 @@ public class LevelComplete : MonoBehaviour {
     public bool level10Finished = false;
 
     public bool levelIsCompleted = false;
-
+    private string temp;
     public void FinishLevel()
     {
         scoreManager.deathCount = PlayerPrefs.GetFloat("DeathCount");
@@ -38,7 +37,9 @@ public class LevelComplete : MonoBehaviour {
         Debug.Log("DeathCount: " + scoreManager.deathCount);
 
         scoreManager.UpdateScore();
-
+        temp = SceneManager.GetActiveScene().name;
+        temp = temp.Remove(temp.Length - 1);
+        PlayerPrefs.SetString("LastLevelPlayed", temp + SceneManager.GetActiveScene().buildIndex);
         Debug.Log("Level completed.");
         gameIsPaused = true;
         Debug.Log(">>>Setting timeScale to 0<<<");
@@ -54,14 +55,15 @@ public class LevelComplete : MonoBehaviour {
         statsDeaths.text = "Deaths: " + scoreManager.deathCount.ToString();
         statsBlood.text = "Blood left: " + bloodManager.bloodLevel.ToString();
         statsScore.text = "Score: " + scoreManager.levelScore.ToString("F2");
-
+        totalStatsScore.text = "Total Score: " + PlayerPrefs.GetFloat("TotalScore").ToString("F2");
+        if (bloodManager.bloodStart == bloodManager.bloodLevel)
+            addBloodText.SetActive(true);
         if (gameManager.activeScene.name=="Level 10")
         {
             totalStatsTitle.text = "Total Statistics";
             totalStatsTimeLeft.text = "Total Time Spent: " + PlayerPrefs.GetFloat("TotalTime").ToString("F2");
             totalStatsDeaths.text = "Total Deaths: " + PlayerPrefs.GetFloat("TotalDeathCount").ToString();
             totalStatsBlood.text = "Total Blood Lost: " + PlayerPrefs.GetFloat("TotalBloodLoss").ToString();
-            totalStatsScore.text = "Total Score: " + PlayerPrefs.GetFloat("TotalScore").ToString("F2");
             level10Finished = true;
         } 
     }
@@ -69,9 +71,13 @@ public class LevelComplete : MonoBehaviour {
     public void LoadMenu()
     {
         Time.timeScale = 1f;
+        print(PlayerPrefs.GetString("LastLevelPlayed"));
+        //SceneManager.GetActiveScene().buildIndex + 1;
+        PlayerPrefs.SetString("LastLevelPlayed", (SceneManager.GetActiveScene().name));
+        print(PlayerPrefs.GetString("LastLevelPlayed"));
         SceneManager.LoadScene("MainMenu");
     }
-
+    
     public void Nextlevel()
     {
         Debug.Log("Load next scene.");

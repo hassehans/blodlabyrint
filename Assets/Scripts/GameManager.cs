@@ -52,7 +52,8 @@ public class GameManager : MonoBehaviour {
         pauseWrapper.SetActive(false);
         levelCompleteCanvas.SetActive(false);
         activeScene = SceneManager.GetActiveScene();
-        PlayerPrefs.SetString("LastLevelPlayed", activeScene.name);
+        if(activeScene.name == "Level 1" || activeScene.name == "Level 10")
+            PlayerPrefs.SetString("LastLevelPlayed", activeScene.name);
 
         bloodManager.die += GameOverHolder;
 

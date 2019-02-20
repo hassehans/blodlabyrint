@@ -7,6 +7,7 @@ public class BloodManager : MonoBehaviour {
 
     public float bloodLoss;
     public float bloodLevel;
+    public float bloodStart;
 
     public bool alive;
     public int deathCounter;
@@ -24,6 +25,7 @@ public class BloodManager : MonoBehaviour {
 
         bloodLoss = 1;
         bloodLevel = 50;
+        bloodStart = bloodLevel;
         alive = true;
         deathCounter = 0;
     }
@@ -33,22 +35,16 @@ public class BloodManager : MonoBehaviour {
         if (bloodLevel > 0)
         {
             if (movement.attackActive)
-            {
                 bloodLoss = 8;
-            }
             else if (!movement.attackActive)
-            {
                 bloodLoss = 1;
-            }
             bloodLevel -= bloodLoss;
         }
 
         if (bloodLevel <= 0)
         {
             if (SoundEffects.instance != null)
-            {
                 SoundEffects.instance.DeathWin();
-            }
             alive = false;
 
             die.Invoke();
