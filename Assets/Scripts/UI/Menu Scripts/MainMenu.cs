@@ -2,7 +2,6 @@
 using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour {
-
     //Load the first level in the game.
     void Update()
     {

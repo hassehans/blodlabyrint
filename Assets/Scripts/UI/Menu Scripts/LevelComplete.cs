@@ -71,10 +71,6 @@ public class LevelComplete : MonoBehaviour {
     public void LoadMenu()
     {
         Time.timeScale = 1f;
-        print(PlayerPrefs.GetString("LastLevelPlayed"));
-        //SceneManager.GetActiveScene().buildIndex + 1;
-        PlayerPrefs.SetString("LastLevelPlayed", (SceneManager.GetActiveScene().name));
-        print(PlayerPrefs.GetString("LastLevelPlayed"));
         SceneManager.LoadScene("MainMenu");
     }
     
